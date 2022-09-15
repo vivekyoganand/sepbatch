@@ -1,0 +1,49 @@
+1  ssh-keygen 
+    2  hostname -I
+    3  ssh-copy-id ansible@172.31.32.74
+    4  sudo vi /etc/ssh/sshd_config 
+    5  ansible -m ping multi
+    6  sudo vi /etc/ssh/sshd_config 
+    7  sudo vi /etc/ansible/hosts
+    8  hostname -I
+    9  sudo vi /etc/ansible/hosts
+   10  sudo vi /etc/ssh/sshd_config 
+   11  ansible -m ping multi
+   12  uptime
+   13  ansible multi -m command -a uptime
+   14  ansible multi -m command -a "ls -l"
+   15  ansible multi -m command -a "lsblk"
+   16  ansible multi -m command -a "pwd"
+   17  ansible multi -m command -a "lscpu"
+   18  ansible multi -m command -a "free"
+   19  ansible multi -m command -a "top"
+   20  ansible multi -m shell -a "top"
+   21  ansible multi -m command -a "vmstat"
+   22  ansible multi -m command -a "iostat"
+   23  ansible multi -m shell -a uptime
+   24  ansible multi -m command -a uptime
+   25  ansible multi -a uptime
+   26  ansible multi -a iostat
+   27  history 
+   28  ansible multi -m shell -a "cat /proc/meminfo|head -2"
+   29  ansible multi -m shell -a "cat /etc/passwd|grep -i vivek" --ask-sudo-pass
+   30  ansible multi -m shell -a "cat /etc/passwd|grep -i vivek" 
+   31  ansible multi -m shell -a "cat /etc/passwd|grep -i ec2-user" 
+   32  ansible multi -m shell -a "cat /etc/passwd|grep -i root" 
+   33  ansible multi -m shell -a "cat /etc/passwd|grep  ROOT" 
+   34  ansible multi -m shell -a "cat /etc/passwd|grep  -i ROOT" 
+   35  ansible multi -m group -a "name=weblogic state=present" 
+   36  ansible multi -m group -a "name=weblogic state=present" -b
+   37  ansible multi -m user -a "name=weblogic group=weblogic createhome=yes" -b
+   38  ansible multi -m file -a "path=/opt/oracle state=directory mode=0755" -b
+   39  ansible multi -m yum -a "name=httpd state=installed" 
+   40  ansible multi -m yum -a "name=httpd state=installed" -b
+   41  ansible multi -m yum -a "name=httpd state=absent" -b
+   42  ansible multi -m yum -a "name=httpd state=absentd" -b
+   43  ansible multi -m service -a "name=httpd state=stop enabled=yes"
+   44  ansible multi -m service -a "name=httpd state=stopped enabled=yes"
+   45  ansible multi -m yum -a "name=httpd state=installed" -b
+   46  ansible multi -m service -a "name=httpd state=stopped enabled=yes"
+   47  ansible multi -m service -a "name=httpd state=started enabled=yes"
+   48  ansible multi -m service -a "name=httpd state=started enabled=yes" -b
+   49  history 
